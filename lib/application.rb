@@ -1,6 +1,9 @@
 class Application
 
-  def cli
-    # Your implementation probably starts here...
-  end
+	class << self
+		def cli(responses_csv, survey_csv)
+			puts "aa"
+    	# Your implementation probably starts here...
+  	end
+	end
 end
