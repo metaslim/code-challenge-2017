@@ -1,4 +1,7 @@
+require_relative 'response_helper'
+
 class Presenter
+	include ResponseHelper
 	attr_reader :decoratee
 
 	def decorate(decoratee)
@@ -8,5 +11,5 @@ class Presenter
 
 	def style
 		 raise NotImplementedError
-	end 
+	end
 end

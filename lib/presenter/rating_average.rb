@@ -1,9 +1,6 @@
 require_relative 'presenter'
-require_relative 'response_helper'
 
 class RatingAverage < Presenter
-	include ResponseHelper
-	
 	def style
 		questions_for('ratingquestion').map do |question|
 			answers = answers_for(question)
