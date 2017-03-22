@@ -11,14 +11,14 @@ class Application
 			responses = ResponsesLoader.load_from(responses_csv)
 
 			report = Report.new(questions, responses)
-			report.add_presenter(ParticipationPercentage.new)
-			report.add_presenter(TotalParticipant.new)
-			report.add_presenter(RatingAverage.new)
-			report.add_presenter(SingleSelection.new)
+			
+			report
+			.add_presenter(ParticipationPercentage.new)
+			.add_presenter(TotalParticipant.new)
+			.add_presenter(RatingAverage.new)
+			.add_presenter(SingleSelection.new)
 
 			report.build
-			report.flush
-
 			
   	end
 	end

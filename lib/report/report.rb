@@ -10,20 +10,23 @@ class Report
 
 	def add_presenter(presenter)
 		@presenters << presenter
+		self
 	end
 
 	def build
 		presenters.each do |presenter|
 			presenter.decorate(self)
 		end
-	end
-
-	def flush
-		puts output.join("\n")
+		flush
 	end
 
 	def append(new_output)
 		output << new_output
+	end
+
+	private
+	def flush
+		puts output.join("\n")
 	end
 
 end
