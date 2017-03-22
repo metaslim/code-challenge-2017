@@ -8,8 +8,8 @@ task "run" do
   require 'application'
 
   # load the data files into strings for you
-  responses_csv = File.read("example-data/survey-1-responses.csv")
-  survey_csv = File.read("example-data/survey-1.csv")
+  responses_csv = File.read("example-data/survey-2-responses.csv")
+  survey_csv = File.read("example-data/survey-2.csv")
 
   # call the app, passing the data as strings containing CSV
   result = Application.cli(responses_csv, survey_csv)
