@@ -5,11 +5,6 @@ class Response
 		@employee = employee
 		@answers = answers
 		@timestamp = timestamp
-		#@answers = answers.map.with_index do |answer, index|
-		#{
-		#	Question.get(index) => answer
-		#}
-		#end
 	end
 
 	def is_submitted?
