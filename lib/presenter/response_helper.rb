@@ -3,6 +3,10 @@ module ResponseHelper
 		decoratee.responses.size
 	end
 
+	def number_of_submitted_reponses
+		submitted_responses.size
+	end
+	
 	def submitted_responses
 		decoratee.responses.select {|response| response.is_submitted?}
 	end
@@ -16,5 +20,4 @@ module ResponseHelper
   		answers << response.answers[question.id]
   	end
   end
-
 end
