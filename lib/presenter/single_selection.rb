@@ -1,7 +1,7 @@
 require_relative 'presenter'
 require_relative 'response_helper'
 
-class Manager < Presenter
+class SingleSelection < Presenter
 	include ResponseHelper
 	
 	def style

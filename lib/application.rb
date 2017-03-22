@@ -14,7 +14,7 @@ class Application
 			report.add_presenter(ParticipationPercentage.new)
 			report.add_presenter(TotalParticipant.new)
 			report.add_presenter(RatingAverage.new)
-			report.add_presenter(Manager.new)
+			report.add_presenter(SingleSelection.new)
 
 			report.build
 			report.flush
