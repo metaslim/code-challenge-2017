@@ -3,9 +3,9 @@ require_relative '../../lib/report/report'
 require_relative '../../lib/presenter/single_selection'
 
 
-describe "single_selection" do
+describe "single_selection presenter" do
   let(:questions) { build_list(:single_question, 1) }
-  let(:responses) { build_list(:single_question_response, 5) }
+  let(:responses) { build_list(:single_question_response, 1) }
   let(:report) { Report.new(questions, responses) }
 
   describe "result" do

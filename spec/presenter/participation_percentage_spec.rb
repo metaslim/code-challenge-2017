@@ -3,7 +3,7 @@ require_relative '../../lib/report/report'
 require_relative '../../lib/presenter/participation_percentage'
 
 
-describe "rating_average" do
+describe "participation_percentage presenter" do
   let(:questions) { build_list(:question, 5) }
   let(:responses) { build_list(:response, 5) }
   let(:report) { Report.new(questions, responses) }

@@ -1,6 +1,6 @@
 require_relative '../../lib/model/employee'
 
-describe "employee" do
+describe "employee model" do
 	def employee
 		@employee
 	end

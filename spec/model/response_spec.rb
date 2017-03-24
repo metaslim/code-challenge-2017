@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 require_relative '../../lib/model/response'
 
-describe "response" do
+describe "response model" do
 	def response
 		@response
 	end

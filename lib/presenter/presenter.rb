@@ -1,4 +1,4 @@
-require_relative 'response_helper'
+require_relative '../helper/response_helper'
 
 class Presenter
 	include ResponseHelper
