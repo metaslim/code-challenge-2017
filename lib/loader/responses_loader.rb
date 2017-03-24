@@ -1,8 +1,8 @@
-require_relative 'loader'
+require_relative 'csv_loader'
 require_relative '../model/employee.rb'
 require_relative '../model/response.rb'
 
-class ResponsesLoader < Loader
+class ResponsesLoader < CSVLoader
 
 	class << self
     private

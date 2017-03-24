@@ -1,6 +1,4 @@
-require 'csv'
-
-class Loader
+class BaseLoader
   class << self
 
     def load_from(csv)
@@ -8,13 +6,12 @@ class Loader
     end
 
     private
-
     def generate(csv)
       raise NotImplementedError
     end
 
     def parse(csv)
-      yield(CSV.new(csv)) if block_given?
+      raise NotImplementedError
     end
 
   end

@@ -1,7 +1,7 @@
-require_relative 'loader'
+require_relative 'csv_loader'
 require_relative '../model/question.rb'
 
-class QuestionsLoader < Loader
+class QuestionsLoader < CSVLoader
   class << self
     private
       def generate(csv)

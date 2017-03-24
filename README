@@ -22,3 +22,7 @@ rspec
 
 * Design
 
+This app has 3 models (employee, response and question). Employee and question can be created using registry via create class method, so there will be only one instance per id. This will allow the app to look up employee and question by id using Employee.get(id) or Question.get(id)
+
+
+
