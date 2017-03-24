@@ -11,9 +11,7 @@ describe "report" do
   let(:questions) { build_list(:question, 5) }
   let(:responses) { build_list(:response, 5) }
 
-  before do
-		@report = Report.new(questions, responses)
-  end
+  let(:report) { Report.new(questions, responses) }
 
   describe "result" do
     it "has correct questions" do
@@ -37,13 +35,13 @@ describe "report" do
 
     it "build correct ouput" do
       presenter = Presenter.new
-      allow(presenter).to receive(:style).and_return("my style 1")
+      allow(presenter).to receive(:style).and_return("Style 1")
       presenter2 = Presenter.new
-      allow(presenter2).to receive(:style).and_return("my style 2")
+      allow(presenter2).to receive(:style).and_return("Style 2")
 
       report.add_presenter(presenter)
       report.add_presenter(presenter2)
-      expect(report.build).to eq "my style 1\nmy style 2"
+      expect(report.build).to eq "Style 1\nStyle 2"
     end
   end
 end

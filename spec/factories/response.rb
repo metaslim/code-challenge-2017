@@ -10,4 +10,12 @@ FactoryGirl.define do
     
     initialize_with { Response.new(employee, answers, timestamp) }
   end
+
+  factory :single_question_response, parent: :response do
+    answers ['Mary']
+  end
+
+  factory :unsubmitted_response, parent: :response do
+    timestamp nil
+  end
 end

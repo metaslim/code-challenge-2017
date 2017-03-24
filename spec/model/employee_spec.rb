@@ -8,9 +8,7 @@ describe "employee" do
 	let(:id) { 1 }
 	let(:email) { 'employee1@abc.xyz' }
 
-	before do
-		@employee = Employee.create(id, email)
-  end
+	let(:employee) { Employee.create(id, email) }
 
 	it "has correct email and id" do
   	expect(employee.id).to eq id

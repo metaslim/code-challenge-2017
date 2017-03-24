@@ -10,9 +10,7 @@ describe "response" do
 	let(:answers) { [5,5,5,5,5] }
 	let(:timestamp) { '2014-07-31T11:35:41+00:00' }
 
-	before do
-		@response = Response.new(employee, answers, timestamp)
-  end
+	let(:response) { Response.new(employee, answers, timestamp) }
 
 	it "has correct employee, answers, timestamp" do
   	expect(response.employee).to eq employee

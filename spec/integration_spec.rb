@@ -49,7 +49,7 @@ describe "integration" do
   		expect(report.add_presenter(RatingAverage.new).build).to include('Rating for', '4.5', '5.0', '5.0', '3.5')
     end
 
-    it "shows correct single selection" do
+    it "shows correct single answers" do
   		expect(report.add_presenter(SingleSelection.new).build).to include('Manager', 'Sally', 'Jane', 'John', 'Mary')
     end
 

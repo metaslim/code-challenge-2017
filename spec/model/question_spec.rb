@@ -10,9 +10,7 @@ describe "question" do
 	let(:type) { 'singleselect' }
 	let(:text) { 'Manager' }
 
-	before do
-		@question = Question.create(id, theme, type, text)
-  end
+	let(:question) { Question.create(id, theme, type, text) }
 
 	it "has correct id, theme, type, text" do
   	expect(question.id).to eq id

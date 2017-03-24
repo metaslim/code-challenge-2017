@@ -2,10 +2,6 @@ require_relative '../../lib/loader/responses_loader'
 
 
 describe "responses_loader" do
-	def responses
-		@responses
-	end
-
   let(:response_csv) {
     <<-CSV
       employee1@abc.xyz,1,2014-07-28T20:35:41+00:00,5,5,5,4,Sally
@@ -16,9 +12,7 @@ describe "responses_loader" do
     CSV
   }
 
-  before do
-    @responses = ResponsesLoader.load_from(response_csv)
-  end
+  let(:responses) { ResponsesLoader.load_from(response_csv) }
 
   describe "result" do
 		it "has 5 response" do
