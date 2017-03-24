@@ -5,11 +5,6 @@ class CSVLoader < BaseLoader
   class << self
 
     private
-
-    def generate(csv)
-      raise NotImplementedError
-    end
-
     def parse(csv)
       yield(CSV.new(csv)) if block_given?
     end

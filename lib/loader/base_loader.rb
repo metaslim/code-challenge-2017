@@ -1,16 +1,16 @@
 class BaseLoader
   class << self
 
-    def load_from(csv)
-      generate(csv)
+    def load_from(file_stream)
+      generate(file_stream)
     end
 
     private
-    def generate(csv)
+    def generate(file_stream)
       raise NotImplementedError
     end
 
-    def parse(csv)
+    def parse(data)
       raise NotImplementedError
     end
 

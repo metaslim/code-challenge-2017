@@ -24,5 +24,9 @@ rspec
 
 This app has 3 models (employee, response and question). Employee and question can be created using registry via create class method, so there will be only one instance per id. This will allow the app to look up employee and question by id using Employee.get(id) or Question.get(id)
 
+This app use CSV loader to parse the CSV. However if there is a need to parse non CSV files such as JSON, We can make a new loader by :
+ 1) Implementing parse class method (converting file stream into data) and extends BaseLoader
+ 2) Implementing generate class method to make a data source of models to be consumed by reports
 
+ This app has 4 presenters while the code challenges only require 3 (participation percentage, rating average, and total participant). To add a new presenter (for eg. single selection), we need to implement style in the new presenter and extends Presenter class
 
