@@ -6,8 +6,19 @@ Ruby 2.3
 
 Using Rspec. All tests are placed on spec/
 
+rake
+
+or
+
 rake spec
+
+or
+
+rspec
 
 * How to run the app
 
-rake run -- -s=example-data/survey-2.csv -r=example-data/survey-2-responses.csv
+./bin/survey-tool -s=example-data/survey-2.csv -r=example-data/survey-2-responses.csv
+
+* Design
+
