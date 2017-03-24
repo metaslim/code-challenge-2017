@@ -7,7 +7,7 @@ describe "response" do
 	end
 
 	let(:employee) { build(:employee) }
-	let(:answers) { [5,5,5,5] }
+	let(:answers) { [5,5,5,5,5] }
 	let(:timestamp) { '2014-07-31T11:35:41+00:00' }
 
 	before do
