@@ -18,7 +18,7 @@ describe "integration" do
     CSV
   }
 
-  	let(:survey_csv) {
+  let(:survey_csv) {
     <<-CSV
     	theme,type,text
 			The Work,ratingquestion,I like the kind of work I do.
@@ -37,7 +37,6 @@ describe "integration" do
   end
 
   describe "result" do
-
 		it "shows correct participation percentage" do
   		expect(report.add_presenter(ParticipationPercentage.new).build).to include('The participation percentage', '80%')
     end
