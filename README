@@ -1,0 +1,13 @@
+* Environment
+
+Ruby 2.3
+
+* Tests
+
+Using Rspec. All tests are placed on spec/
+
+rake spec
+
+* How to run the app
+
+rake run -- -s=example-data/survey-2.csv -r=example-data/survey-2-responses.csv
