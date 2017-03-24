@@ -5,10 +5,10 @@ require_relative 'report/report'
 class Application
 
 	class << self
-		def cli(responses_csv, survey_csv)
+		def cli(response_csv, survey_csv)
     	# Your implementation probably starts here...
 			questions = QuestionsLoader.load_from(survey_csv)
-			responses = ResponsesLoader.load_from(responses_csv)
+			responses = ResponsesLoader.load_from(response_csv)
 
 			report = Report.new(questions, responses)
 			
@@ -18,8 +18,7 @@ class Application
 			.add_presenter(RatingAverage.new)
 			.add_presenter(SingleSelection.new)
 
-			report.build
-			
+			puts report.build
   	end
 	end
 end

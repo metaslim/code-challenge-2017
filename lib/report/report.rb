@@ -6,6 +6,7 @@ class Report
 		@responses = responses
 		@presenters = []
 		@output = []
+
 	end
 
 	def add_presenter(presenter)
@@ -17,16 +18,10 @@ class Report
 		presenters.each do |presenter|
 			presenter.decorate(self)
 		end
-		flush
+		output.join("\n")
 	end
 
-	def append(new_output)
-		output << new_output
+	def append(content)
+		output << content
 	end
-
-	private
-	def flush
-		puts output.join("\n")
-	end
-
 end
