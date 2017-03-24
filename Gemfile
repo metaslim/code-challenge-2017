@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 
 gem "rake"
 gem "rspec"
-gem "pry-byebug"
+gem "factory_girl"

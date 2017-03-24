@@ -1,7 +1,7 @@
 require_relative 'registry'
 
 class Employee < Registry
-	attr_reader :email, :id
+	attr_accessor :email, :id
 
 	@registry = {}
 

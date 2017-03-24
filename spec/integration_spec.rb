@@ -4,7 +4,6 @@ require_relative '../lib/report/report'
 
 
 describe "integration" do
-	
 	def report
 		@report
 	end
