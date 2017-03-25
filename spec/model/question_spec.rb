@@ -1,10 +1,6 @@
 require_relative '../../lib/culture_amp/model/question'
 
 describe "question model" do
-	def question
-		@question
-	end
-
 	let(:id) { 1 }
 	let(:theme) { 'The Work' }
 	let(:type) { 'singleselect' }

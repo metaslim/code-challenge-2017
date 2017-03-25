@@ -1,10 +1,6 @@
 require_relative '../../lib/culture_amp/model/employee'
 
 describe "employee model" do
-	def employee
-		@employee
-	end
-
 	let(:id) { 1 }
 	let(:email) { 'employee1@abc.xyz' }
 

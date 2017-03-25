@@ -2,10 +2,6 @@ require_relative '../spec_helper'
 require_relative '../../lib/culture_amp/model/response'
 
 describe "response model" do
-	def response
-		@response
-	end
-
 	let(:employee) { build(:employee) }
 	let(:answers) { [5,5,5,5,5] }
 	let(:timestamp) { '2014-07-31T11:35:41+00:00' }
