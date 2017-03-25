@@ -1,6 +1,6 @@
-require_relative 'loader/loader_pack'
-require_relative 'presenter/presenter_pack'
-require_relative 'report/report'
+require_relative 'culture_amp/loader/loader_pack'
+require_relative 'culture_amp/presenter/presenter_pack'
+require_relative 'culture_amp/report/base_report'
 require 'optparse'
 
 class Application
@@ -42,16 +42,16 @@ class Application
 	
 	def run(response_csv, survey_csv)
   	# load the data files into strings for you
-		questions = QuestionsLoader.load_from(File.read(survey_csv))
-		responses = ResponsesLoader.load_from(File.read(response_csv))
+		questions = CultureAmp::Loader::QuestionsLoader.load_from(File.read(survey_csv))
+		responses = CultureAmp::Loader::ResponsesLoader.load_from(File.read(response_csv))
 
-		report = Report.new(questions, responses)
+		report = CultureAmp::Report::BaseReport.new(questions, responses)
 		
 		report
-		.add_presenter(ParticipationPercentage.new)
-		.add_presenter(TotalParticipant.new)
-		.add_presenter(RatingAverage.new)
-		.add_presenter(SingleSelection.new)
+		.add_presenter(CultureAmp::Presenter::ParticipationPercentage.new)
+		.add_presenter(CultureAmp::Presenter::TotalParticipant.new)
+		.add_presenter(CultureAmp::Presenter::RatingAverage.new)
+		.add_presenter(CultureAmp::Presenter::SingleSelection.new)
 
 		puts report.build
 	end

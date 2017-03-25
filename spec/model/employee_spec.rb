@@ -1,4 +1,4 @@
-require_relative '../../lib/model/employee'
+require_relative '../../lib/culture_amp/model/employee'
 
 describe "employee model" do
 	def employee
@@ -8,7 +8,7 @@ describe "employee model" do
 	let(:id) { 1 }
 	let(:email) { 'employee1@abc.xyz' }
 
-	let(:employee) { Employee.create(id, email) }
+	let(:employee) { CultureAmp::Model::Employee.create(id, email) }
 
 	it "has correct email and id" do
   	expect(employee.id).to eq id
@@ -16,7 +16,7 @@ describe "employee model" do
   end
 
   it "does not create duplicate employee" do
-  	new_employee = Employee.create(id, email)
+  	new_employee = CultureAmp::Model::Employee.create(id, email)
   	expect(employee).to eq new_employee
   end
 end

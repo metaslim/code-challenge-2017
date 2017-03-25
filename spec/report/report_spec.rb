@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
-require_relative '../../lib/report/report'
-require_relative '../../lib/presenter/presenter'
+require_relative '../../lib/culture_amp/report/base_report'
+require_relative '../../lib/culture_amp/presenter/base_presenter'
 
 
 describe "report" do
@@ -11,7 +11,7 @@ describe "report" do
   let(:questions) { build_list(:question, 5) }
   let(:responses) { build_list(:response, 5) }
 
-  let(:report) { Report.new(questions, responses) }
+  let(:report) { CultureAmp::Report::BaseReport.new(questions, responses) }
 
   describe "result" do
     it "has correct questions" do
@@ -34,9 +34,9 @@ describe "report" do
     end
 
     it "build correct ouput" do
-      presenter = Presenter.new
+      presenter = CultureAmp::Presenter::BasePresenter.new
       allow(presenter).to receive(:style).and_return("Style 1")
-      presenter2 = Presenter.new
+      presenter2 = CultureAmp::Presenter::BasePresenter.new
       allow(presenter2).to receive(:style).and_return("Style 2")
 
       report.add_presenter(presenter)

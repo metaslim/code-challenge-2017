@@ -1,11 +1,7 @@
-require_relative '../../lib/loader/questions_loader'
+require_relative '../../lib/culture_amp/loader/questions_loader'
 
 
 describe "questions_loader" do
-	def questions
-		@questions
-	end
-
   let(:survey_csv) {
     <<-CSV
     	theme,type,text
@@ -17,9 +13,7 @@ describe "questions_loader" do
     CSV
   }
 
-  before do
-    @questions = QuestionsLoader.load_from(survey_csv)
-  end
+  let(:questions) { CultureAmp::Loader::QuestionsLoader.load_from(survey_csv) }
 
   describe "result" do
 		it "has 5 question" do
@@ -39,7 +33,7 @@ describe "questions_loader" do
     end
 
     it "Raise error for bad csv" do
-     expect { QuestionsLoader.load_from(nil) }.to raise_error ArgumentError
+     expect { CultureAmp::Loader::QuestionsLoader.load_from(nil) }.to raise_error ArgumentError
     end
   end
 

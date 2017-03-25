@@ -1,4 +1,4 @@
-require_relative '../../lib/loader/responses_loader'
+require_relative '../../lib/culture_amp/loader/responses_loader'
 
 
 describe "responses_loader" do
@@ -12,7 +12,7 @@ describe "responses_loader" do
     CSV
   }
 
-  let(:responses) { ResponsesLoader.load_from(response_csv) }
+  let(:responses) { CultureAmp::Loader::ResponsesLoader.load_from(response_csv) }
 
   describe "result" do
 		it "has 5 response" do
@@ -27,7 +27,7 @@ describe "responses_loader" do
     end
 
     it "Raise error for bad csv" do
-     expect { ResponsesLoader.load_from(nil) }.to raise_error ArgumentError
+     expect { CultureAmp::Loader::ResponsesLoader.load_from(nil) }.to raise_error ArgumentError
     end
   end
 

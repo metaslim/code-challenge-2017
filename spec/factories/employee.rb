@@ -1,7 +1,7 @@
-require_relative '../../lib/model/employee'
+require_relative '../../lib/culture_amp/model/employee'
 
 FactoryGirl.define do
-  factory :employee  do
+  factory :employee, class: CultureAmp::Model::Employee do
     transient do
       sequence :id do |n|
     		n
@@ -12,6 +12,6 @@ FactoryGirl.define do
   		end  
     end
     
-    initialize_with { Employee.new(id, email) }
+    initialize_with { CultureAmp::Model::Employee.new(id, email) }
   end
 end

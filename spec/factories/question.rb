@@ -1,7 +1,7 @@
-require_relative '../../lib/model/question'
+require_relative '../../lib/culture_amp/model/question'
 
 FactoryGirl.define do
-  factory :question  do
+  factory :question, class: CultureAmp::Model::Question  do
     transient do
       sequence(:id,0) do |n|
     		n
@@ -11,7 +11,7 @@ FactoryGirl.define do
 			text "Rating Question"
     end
     
-    initialize_with { Question.new(id, theme, type, text) }
+    initialize_with { CultureAmp::Model::Question.new(id, theme, type, text) }
   end
 
   factory :single_question, parent: :question do

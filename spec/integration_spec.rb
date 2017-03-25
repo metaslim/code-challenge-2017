@@ -1,6 +1,6 @@
-require_relative '../lib/loader/loader_pack'
-require_relative '../lib/presenter/presenter_pack'
-require_relative '../lib/report/report'
+require_relative '../lib/culture_amp/loader/loader_pack'
+require_relative '../lib/culture_amp/presenter/presenter_pack'
+require_relative '../lib/culture_amp/report/base_report'
 
 
 describe "integration" do
@@ -30,27 +30,27 @@ describe "integration" do
   }
 
   before do
-    questions = QuestionsLoader.load_from(survey_csv)
-		responses = ResponsesLoader.load_from(response_csv)
+    questions = CultureAmp::Loader::QuestionsLoader.load_from(survey_csv)
+		responses = CultureAmp::Loader::ResponsesLoader.load_from(response_csv)
 
-		@report = Report.new(questions, responses)
+		@report = CultureAmp::Report::BaseReport.new(questions, responses)
   end
 
   describe "result" do
 		it "shows correct participation percentage" do
-  		expect(report.add_presenter(ParticipationPercentage.new).build).to include('The participation percentage', '80%')
+  		expect(report.add_presenter(CultureAmp::Presenter::ParticipationPercentage.new).build).to include('The participation percentage', '80%')
     end
 
     it "shows correct total participant" do
-  		expect(report.add_presenter(TotalParticipant.new).build).to include('The total participant', '5')
+  		expect(report.add_presenter(CultureAmp::Presenter::TotalParticipant.new).build).to include('The total participant', '5')
     end
 
     it "shows correct rating average" do
-  		expect(report.add_presenter(RatingAverage.new).build).to include('Rating for', '4.5', '5.0', '5.0', '3.5')
+  		expect(report.add_presenter(CultureAmp::Presenter::RatingAverage.new).build).to include('Rating for', '4.5', '5.0', '5.0', '3.5')
     end
 
     it "shows correct single answers" do
-  		expect(report.add_presenter(SingleSelection.new).build).to include('Manager', 'Sally', 'Jane', 'John', 'Mary')
+  		expect(report.add_presenter(CultureAmp::Presenter::SingleSelection.new).build).to include('Manager', 'Sally', 'Jane', 'John', 'Mary')
     end
 
 

@@ -1,4 +1,4 @@
-require_relative '../../lib/model/question'
+require_relative '../../lib/culture_amp/model/question'
 
 describe "question model" do
 	def question
@@ -10,11 +10,11 @@ describe "question model" do
 	let(:type) { 'singleselect' }
 	let(:text) { 'Manager' }
 
-	let(:question) { Question.create(id, theme, type, text) }
+	let(:question) { CultureAmp::Model::Question.create(id, theme, type, text) }
 
 	it "has correct id, theme, type, text" do
 		# prevent interference from prev test, it runs well as single test
-		Question.reset_registry
+		CultureAmp::Model::Question.reset_registry
 		
   	expect(question.id).to eq id
   	expect(question.theme).to eq theme
@@ -23,7 +23,7 @@ describe "question model" do
   end
 
   it "does not create duplicate question" do
-  	new_question = Question.create(id, theme, type, text)
+  	new_question = CultureAmp::Model::Question.create(id, theme, type, text)
   	expect(question).to eq new_question
   end
 end
