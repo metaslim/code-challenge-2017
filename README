@@ -28,5 +28,5 @@ This app use CSV loader to parse the CSV. However if there is a need to parse no
  1) Implementing "parse" class method (converting file stream into data source) and extends BaseLoader
  2) Implementing "generate" class method (converting data source to models to be consumed by reports) that consist of a block to be yielded by "parse" class method
 
- This app has 4 presenters while the code challenges only require 3 presenters (participation percentage, rating average, and total participant). To add a new presenter (please see example single selection), we need to implement "style" method in the new presenter and extends Presenter class who will consume that new "style" method
+ This app has 4 presenters while the code challenges only require 3 presenters (participation percentage, rating average, and total participant). To add a new presenter (please see example single selection), we need to implement "style" method in the new presenter and extends Presenter class who will consume that new "style" method. Each presenter will decorate the report object.
 
