@@ -3,11 +3,7 @@ require_relative '../lib/culture_amp/presenter/presenter_pack'
 require_relative '../lib/culture_amp/report/base_report'
 
 
-describe "integration" do
-	def report
-		@report
-	end
-	
+describe "integration" do	
 	let(:response_csv) {
     <<-CSV
     	employee1@abc.xyz,1,2014-07-28T20:35:41+00:00,5,5,5,4,Sally
@@ -29,12 +25,9 @@ describe "integration" do
     CSV
   }
 
-  before do
-    questions = CultureAmp::Loader::QuestionsLoader.load_from(survey_csv)
-		responses = CultureAmp::Loader::ResponsesLoader.load_from(response_csv)
-
-		@report = CultureAmp::Report::BaseReport.new(questions, responses)
-  end
+  let(:questions) { CultureAmp::Loader::QuestionsLoader.load_from(survey_csv) }
+	let(:responses) { CultureAmp::Loader::ResponsesLoader.load_from(response_csv) }
+  let(:report)  { CultureAmp::Report::BaseReport.new(questions, responses) }
 
   describe "result" do
 		it "shows correct participation percentage" do
@@ -52,8 +45,5 @@ describe "integration" do
     it "shows correct single answers" do
   		expect(report.add_presenter(CultureAmp::Presenter::SingleSelection.new).build).to include('Manager', 'Sally', 'Jane', 'John', 'Mary')
     end
-
-
   end
-
 end

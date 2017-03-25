@@ -4,10 +4,6 @@ require_relative '../../lib/culture_amp/presenter/base_presenter'
 
 
 describe "report" do
-	def report
-		@report
-	end
-
   let(:questions) { build_list(:question, 5) }
   let(:responses) { build_list(:response, 5) }
 
