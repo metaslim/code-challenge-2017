@@ -1,7 +1,3 @@
-# Culture Amp's Developer Coding Test
-
-Your task is to build a CLI application to parse and display survey data from CSV files, and display the results.
-
 ## Data Format
 
 ### Survey Data
@@ -37,19 +33,3 @@ The output should include:
 - Any response with a 'submitted_at' date has submitted and is said to have participated in the survey.
 2. The average for each rating question
 - Results from unsubmitted surveys should not be considered in the output. 
-
-## Other information
-
-Please include a Readme with any additional information you would like to include. You may wish to use it to explain any design decisions.
-
-Despite this being a small command line app, please approach this as you would a production problem using whatever approach to coding and testing you feel appropriate. Successful candidates will be asked to extend their implementation in a pair programming session as a component of the interview, so consider extensibility.
-
-## Submitting your solution
-
-Assuming you use Git, when you’re ready to submit your solution, please use `git bundle` to package up a copy of your repository (with complete commit history) as a single file and send it to us as an email attachment. 
-
-```
-git bundle create culture-amp-coding-test.bundle master
-```
-
-We're looking forward to your innovative solutions!
