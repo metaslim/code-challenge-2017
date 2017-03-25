@@ -8,10 +8,7 @@ describe "question model" do
 
 	let(:question) { CultureAmp::Model::Question.create(id, theme, type, text) }
 
-	it "has correct id, theme, type, text" do
-		# prevent interference from prev test, it runs well as single test
-		CultureAmp::Model::Question.reset_registry
-		
+	it "has correct id, theme, type, text" do		
   	expect(question.id).to eq id
   	expect(question.theme).to eq theme
   	expect(question.type).to eq type

@@ -7,9 +7,10 @@ RSpec.configure do |config|
     FactoryGirl.find_definitions
   end
 
-
   config.after(:each) do
   	# Reset sequence after each test, to ensure id mapping between Question and Answer matches
+  	CultureAmp::Model::Employee.reset_registry
+  	CultureAmp::Model::Question.reset_registry
     FactoryGirl.reload
   end
 end
