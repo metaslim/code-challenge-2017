@@ -17,6 +17,10 @@ module CultureAmp
     		@id = id
     		@email = email
     	end
+
+      def is_valid?
+        id != nil && email != nil
+      end
     end
   end
 end

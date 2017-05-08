@@ -5,7 +5,7 @@ module CultureAmp
 		class ParticipationPercentage < CultureAmp::Presenter::BasePresenter
 			def style
 				percentage = (
-					number_of_submitted_reponses / total_responses.to_f
+					number_of_valid_reponses / total_responses.to_f
 				)
 				.round(2) * 100
 

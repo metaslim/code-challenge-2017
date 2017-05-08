@@ -12,9 +12,16 @@ describe "response model" do
   	expect(response.employee).to eq employee
   	expect(response.answers).to eq answers
   	expect(response.timestamp).to eq timestamp
+    expect(response.is_valid?).to eq true
   end
 
   it "tag response as invalid" do
   	expect(CultureAmp::Model::Response.new(employee, answers, nil).is_submitted?).to eq false
+  end
+
+  it "tag response as invalid due to missing email and id" do
+    employee.id = nil
+    employee.email = nil
+    expect(CultureAmp::Model::Response.new(employee, answers, nil).is_valid?).to eq false
   end
 end

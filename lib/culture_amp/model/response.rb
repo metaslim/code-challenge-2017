@@ -12,6 +12,10 @@ module CultureAmp
 			def is_submitted?
 				!timestamp.nil?
 			end
+
+			def is_valid?
+				employee.is_valid?
+			end
 		end
 	end
 end

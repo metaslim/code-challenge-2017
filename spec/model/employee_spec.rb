@@ -15,4 +15,10 @@ describe "employee model" do
   	new_employee = CultureAmp::Model::Employee.create(id, email)
   	expect(employee).to eq new_employee
   end
+
+  it "has no email and id" do
+    employee.id = nil
+    employee.email = nil
+    expect(employee.is_valid?).to eq false
+  end
 end
