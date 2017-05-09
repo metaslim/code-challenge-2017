@@ -19,7 +19,7 @@ module CultureAmp
     	end
 
       def is_valid?
-        id != nil && email != nil
+        id != nil || email != nil
       end
     end
   end
