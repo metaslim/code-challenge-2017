@@ -18,7 +18,7 @@ module CultureAmp
               answers = row[3..-1]
 
               responses << CultureAmp::Model::Response.new(
-                CultureAmp::Model::Employee.create(id, email),
+                CultureAmp::Model::Employee.new(id, email),
                 answers,
                 timestamp
               )

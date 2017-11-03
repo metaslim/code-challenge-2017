@@ -11,7 +11,7 @@ module CultureAmp
 
             parse(csv, {header: true}) do |parsed_csv|
               parsed_csv.each_with_index do |row, index|
-                questions << CultureAmp::Model::Question.create(
+                questions << CultureAmp::Model::Question.new(
                   index,
                   row[:theme],
                   row[:type],
