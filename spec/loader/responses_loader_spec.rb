@@ -20,10 +20,10 @@ describe "responses_loader" do
     end
 
     it "has email, id, timestamp, type, answers" do
-      expect(responses.first.employee.email).to include('employee1@abc.xyz')
-      expect(responses.first.employee.id).to include('1')
+      expect(responses.first.employee.email.strip).to eq('employee1@abc.xyz')
+      expect(responses.first.employee.id).to eq('1')
       expect(responses.first.answers).to eq ["5", "5", "5", "4", "Sally"]
-      expect(responses.first.timestamp).to include('2014-07-28T20:35:41+00:00')
+      expect(responses.first.timestamp).to eq('2014-07-28T20:35:41+00:00')
     end
 
     it "Raise error for bad csv" do

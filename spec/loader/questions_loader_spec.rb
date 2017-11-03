@@ -21,15 +21,17 @@ describe "questions_loader" do
     end
 
     it "has correct theme, type, text" do
-      expect(questions.first.theme).to include('The Work')
-      expect(questions.first.type).to include('ratingquestion')
-      expect(questions.first.text).to include('I like the kind of work I do.')
+      first_question = questions.first
+      expect(first_question.theme.strip).to eq('The Work')
+      expect(first_question.type).to eq('ratingquestion')
+      expect(first_question.text).to eq('I like the kind of work I do.')
     end
 
     it "has single select question as last question" do
-      expect(questions.last.theme).to include('The Work')
-      expect(questions.last.type).to include('singleselect')
-      expect(questions.last.text).to include('Manager')
+      last_question = questions.last
+      expect(last_question.theme.strip).to eq('The Work')
+      expect(last_question.type).to eq('singleselect')
+      expect(last_question.text).to eq('Manager')
     end
 
     it "Raise error for bad csv" do
