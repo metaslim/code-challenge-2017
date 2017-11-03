@@ -9,15 +9,13 @@ module CultureAmp
           def generate(csv)
             questions = []
 
-            parse(csv) do |parsed_csv|
-              parsed_csv.to_a[1..-1].each_with_index do |row, index|
-                (theme, type, text) = row
-
+            parse(csv, {header: true}) do |parsed_csv|
+              parsed_csv.each_with_index do |row, index|
                 questions << CultureAmp::Model::Question.create(
                   index,
-                  theme,
-                  type,
-                  text
+                  row[:theme],
+                  row[:type],
+                  row[:text]
                 )
               end
               questions

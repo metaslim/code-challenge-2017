@@ -13,8 +13,7 @@ module CultureAmp
            responses = []
 
           parse(csv) do |parsed_csv|
-
-            parsed_csv.to_a.each do |row|
+            parsed_csv.each do |row|
               (email, id, timestamp) = row[0..2]
               answers = row[3..-1]
 
