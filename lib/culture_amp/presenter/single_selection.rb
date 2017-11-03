@@ -6,7 +6,7 @@ module CultureAmp
       def style
         questions_for('singleselect').map do |question|
           answers = answers_for(question)
-          "#{question.text} are #{answers.join(", ")}"
+          "#{question.text} are #{answers.join(", ")}" unless answers.empty?
         end
       end
     end

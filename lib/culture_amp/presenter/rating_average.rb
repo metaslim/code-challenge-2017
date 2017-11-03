@@ -7,7 +7,7 @@ module CultureAmp
         questions_for('ratingquestion').map do |question|
           answers = answers_for(question)
           rating = rating_for(answers)
-          "Rating for '#{question.text}' is #{rating}"
+          "Rating for '#{question.text}' is #{rating}" unless rating.nan?
         end
       end
 
