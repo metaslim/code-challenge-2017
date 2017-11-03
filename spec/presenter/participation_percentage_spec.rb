@@ -14,8 +14,8 @@ describe "participation_percentage presenter" do
      end
 
      it "shows correct participation percentage with unsubmitted response" do
-    	unsubmitted_response = build_list(:unsubmitted_response, 5)
-    	report = CultureAmp::Report::BaseReport.new(questions, unsubmitted_response)
+      unsubmitted_response = build_list(:unsubmitted_response, 5)
+      report = CultureAmp::Report::BaseReport.new(questions, unsubmitted_response)
       expect(report.add_presenter(CultureAmp::Presenter::ParticipationPercentage.new).build).to include('The participation percentage', '0%')
      end
   end

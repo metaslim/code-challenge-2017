@@ -3,9 +3,9 @@ require_relative 'registry'
 module CultureAmp
   module Model
     class Employee < CultureAmp::Model::Registry
-    	attr_accessor :email, :id
+      attr_accessor :email, :id
 
-    	@registry = {}
+      @registry = {}
 
       class << self
         def create(id, email)
@@ -14,9 +14,9 @@ module CultureAmp
       end
 
       def initialize(id, email)
-    		@id = id
-    		@email = email
-    	end
+        @id = id
+        @email = email
+      end
 
       def is_valid?
         id != nil || email != nil

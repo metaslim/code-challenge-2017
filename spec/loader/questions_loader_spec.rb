@@ -4,20 +4,20 @@ require_relative '../../lib/culture_amp/loader/questions_loader'
 describe "questions_loader" do
   let(:survey_csv) {
     <<-CSV
-    	theme,type,text
-			The Work,ratingquestion,I like the kind of work I do.
-			The Work,ratingquestion,"In general, I have the resources (e.g., business tools, information, facilities, IT or functional support) I need to be effective."
-			The Work,ratingquestion,We are working at the right pace to meet our goals.
-			The Work,ratingquestion,I feel empowered to get the work done for which I am responsible.
-			The Work,singleselect,Manager
+      theme,type,text
+      The Work,ratingquestion,I like the kind of work I do.
+      The Work,ratingquestion,"In general, I have the resources (e.g., business tools, information, facilities, IT or functional support) I need to be effective."
+      The Work,ratingquestion,We are working at the right pace to meet our goals.
+      The Work,ratingquestion,I feel empowered to get the work done for which I am responsible.
+      The Work,singleselect,Manager
     CSV
   }
 
   let(:questions) { CultureAmp::Loader::QuestionsLoader.load_from(survey_csv) }
 
   describe "result" do
-		it "has 5 question" do
-  		expect(questions.size).to eq 5
+    it "has 5 question" do
+      expect(questions.size).to eq 5
     end
 
     it "has correct theme, type, text" do

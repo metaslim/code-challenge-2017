@@ -6,11 +6,11 @@ module CultureAmp
   module Loader
     class ResponsesLoader < CultureAmp::Loader::CSVLoader
 
-    	class << self
+      class << self
         private
 
-    		 def generate(csv)
-    		 	responses = []
+         def generate(csv)
+           responses = []
 
           parse(csv) do |parsed_csv|
 
@@ -28,7 +28,7 @@ module CultureAmp
 
           responses
         end
-    	end
+      end
     end
   end
 end

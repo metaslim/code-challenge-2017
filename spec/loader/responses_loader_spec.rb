@@ -15,8 +15,8 @@ describe "responses_loader" do
   let(:responses) { CultureAmp::Loader::ResponsesLoader.load_from(response_csv) }
 
   describe "result" do
-		it "has 5 response" do
-  		expect(responses.size).to eq 5
+    it "has 5 response" do
+      expect(responses.size).to eq 5
     end
 
     it "has email, id, timestamp, type, answers" do

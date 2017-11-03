@@ -1,7 +1,7 @@
 module CultureAmp
   module Model
     class Registry
-    	@registry = {}
+      @registry = {}
 
       class << self
         def create(id, *param)
@@ -9,7 +9,7 @@ module CultureAmp
         end
 
         def get(id)
-    			@registry[id]
+          @registry[id]
         end
 
         def registry

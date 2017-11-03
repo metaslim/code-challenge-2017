@@ -7,7 +7,7 @@ FactoryGirl.define do
       answers [5,5,5,5,5]
       timestamp "2014-07-31T11:35:41+00:00"
     #end
-    
+
     initialize_with { CultureAmp::Model::Response.new(employee, answers, timestamp) }
   end
 
